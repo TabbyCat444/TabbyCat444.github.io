@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="tabitha-tallent-portfolio-js">
+    <output-path>$PROJECT_DIR$/build/libs</output-path>
+    <root id="archive" name="tabitha-tallent-portfolio-js.jar">
+      <element id="module-output" name="tabitha-tallent-portfolio.jsMain" />
+    </root>
+  </artifact>
+</component>
