@@ -1,0 +1,237 @@
+/* ==========================================================================
+   1. DESIGN TOKENS & CSS VARIABLES
+   ========================================================================== */
+:root {
+    /* Light Theme Tokens */
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F8F7FF;
+    --text-primary: #1E1B2E;
+    --text-secondary: #524B6B;
+    --accent-primary: #7C3AED;
+    --accent-hover: #6D28D9;
+    --border-color: #E4E1F5;
+}
+
+[data-theme="dark"] {
+    /* Dark Theme Tokens */
+    --bg-primary: #0F0D1B;
+    --bg-secondary: #1A172B;
+    --text-primary: #F5F3FF;
+    --text-secondary: #A7A0C8;
+    --accent-primary: #A855F7;
+    --accent-hover: #C084FC;
+    --border-color: #2D2847;
+}
+
+/* ==========================================================================
+   2. GLOBAL RESETS & BASE TYPOGRAPHY
+   ========================================================================== */
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.btn-primary {
+    background-color: var(--accent-primary);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+}
+
+.accent-text {
+    color: var(--accent-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ==========================================================================
+   3. HEADER & NAVIGATION
+   ========================================================================== */
+.nav-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 2rem;
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+    backdrop-filter: blur(8px);
+}
+
+.header-left,
+.footer-left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header-logo-img {
+    height: 100px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.header-logo-img:hover {
+    transform: scale(1.05);
+}
+
+.header-center,
+.footer-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    text-align: center;
+}
+
+.nav-brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.accent-text {
+    color: var(--accent-primary);
+}
+
+.subnav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.subnav-link {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.subnav-link:hover {
+    color: var(--accent-primary);
+}
+.header-right,
+.footer-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.social-link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.social-link:hover {
+    color: var(--accent-primary);
+}
+
+.theme-toggle-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.35rem 0.6rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* ==========================================================================
+   4. PROJECT CARDS & GRID
+   ========================================================================== */
+.project-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-primary);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile view: single column */
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    }
+}
+
+@media (min-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on wider displays */
+    }
+}
+
+/* ==========================================================================
+   5. FOOTER
+   ========================================================================== */
+
+.footer {
+    position: relative;
+    background-color: var(--bg-primary);
+    border-top: 1px solid var(--border-color);
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.copyright {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.footer-left {
+    margin-left: auto;
+}
+
+.footer-right {
+    margin-right: auto;
+}
