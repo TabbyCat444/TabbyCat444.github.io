@@ -78,9 +78,12 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    filter: drop-shadow(1px 1.5px var(--border-color));
     padding: 0.75rem 2rem;
-    background-color: var(--bg-primary);
-    border-bottom: 1px solid var(--border-color);
+    margin: 1rem;
+    background-color: var(--bg-secondary);
     backdrop-filter: blur(8px);
 }
 
@@ -173,7 +176,54 @@ html {
 }
 
 /* ==========================================================================
-   4. PROJECT CARDS & GRID
+   4. HERO SECTION
+   ========================================================================== */
+.hero-section {
+    padding: 1rem 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-start;
+    gap: 1rem;
+}
+
+.hero-left {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    filter: drop-shadow(1px 1.5px var(--border-color));
+    flex: 2;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.hero-right {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    filter: drop-shadow(1px 1.5px var(--accent-primary));
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.hero-title {
+    margin-bottom: 1rem;
+}
+
+.hero-tech-stack-title {
+    margin-bottom: 1rem;
+}
+
+.hero-tech-stack-category {
+    font-size: 0.80rem;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   5. PROJECT CARDS & GRID
    ========================================================================== */
 .project-card {
     background-color: var(--bg-secondary);
@@ -208,30 +258,27 @@ html {
 }
 
 /* ==========================================================================
-   5. FOOTER
+   6. FOOTER
    ========================================================================== */
 
+
 .footer {
-    position: relative;
+    position: fixed;
     background-color: var(--bg-primary);
-    border-top: 1px solid var(--border-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    filter: drop-shadow(1px 1.5px var(--accent-primary));
+    margin: 1rem;
     bottom: 0;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0.75rem 2rem;
 }
-
 .copyright {
     font-size: 0.875rem;
     color: var(--text-secondary);
     font-style: italic;
-}
-
-.footer-left {
-    margin-left: auto;
-}
-
-.footer-right {
-    margin-right: auto;
 }
