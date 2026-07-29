@@ -6,6 +6,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import com.tabithatallent.portfolio.components.Footer
 import com.tabithatallent.portfolio.components.Header
+import com.tabithatallent.portfolio.views.heroSection
 import kotlinx.browser.window
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.*
@@ -34,12 +35,11 @@ fun main() {
         Main({
             style {
                 paddingTop(20.px)
-                minHeight(60.vh)
+                paddingBottom(20.px)
             }
         }) {
             Div({ style { padding(2.px) } }) {
-                H1 { Text("Preview Mode") }
-                P { Text("Click the links or scroll down to verify sticky header navigation") }
+                heroSection()
             }
         }
 
