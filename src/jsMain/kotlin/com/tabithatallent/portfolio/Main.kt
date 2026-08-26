@@ -6,9 +6,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import com.tabithatallent.portfolio.components.Footer
 import com.tabithatallent.portfolio.components.Header
-import com.tabithatallent.portfolio.views.heroSection
 import com.tabithatallent.portfolio.views.homeView
-import com.tabithatallent.portfolio.views.projects.japCard
 import kotlinx.browser.window
 import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.*
@@ -42,7 +40,7 @@ fun main() {
             }
         }) {
             Div({ style { padding(2.px) } }) {
-                japCard()
+                homeView()
         }
 
         Footer(

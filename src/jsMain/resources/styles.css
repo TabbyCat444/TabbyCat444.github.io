@@ -395,6 +395,13 @@ html {
     background-color: rgba(255, 255, 255, 0.15);
 }
 
+.project-hero-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
 /* ── Tech Stack Grid ─────────────────────────────────────────────── */
 .tech-stack-grid {
     display: grid;

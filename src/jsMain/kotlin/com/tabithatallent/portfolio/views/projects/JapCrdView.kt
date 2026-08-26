@@ -1,16 +1,12 @@
 package com.tabithatallent.portfolio.views.projects
 
 import androidx.compose.runtime.Composable
-import org.jetbrains.compose.web.attributes.height
-import org.jetbrains.compose.web.attributes.src
-import org.jetbrains.compose.web.attributes.width
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Br
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.H3
 import org.jetbrains.compose.web.dom.H4
-import org.jetbrains.compose.web.dom.Iframe
 import org.jetbrains.compose.web.dom.Img
 import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Span
@@ -31,7 +27,7 @@ fun japCard() {
                 }
                 A(
                     href = "https://github.com/tabbycat444/JapCrd",
-                    attrs = { classes("project-hero-github-btn") }
+                    attrs = { classes("project-hero-link") }
                 ) {
                     Text("View on GitHub")
                 }
@@ -61,9 +57,8 @@ fun japCard() {
             Text("Category: Educational Tool, Interactive Application")
             Br()
             Text("Repository: ")
-            A(href = "https://github.com/tabbycat444/JapCrd") {
-                Text("github.com/tabbycat444/JapCrd")
-            }
+            A(href = "https://github.com/tabbycat444/JapCrd", attrs = { classes("project-hero-link") })
+            { Text("github.com/tabbycat444/JapCrd") }
         }
 
         // ── TECH STACK ────────────────────────────────────────────────
