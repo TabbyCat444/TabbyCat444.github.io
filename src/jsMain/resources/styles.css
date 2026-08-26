@@ -402,6 +402,13 @@ html {
     transition: color 0.2s ease;
 }
 
+.project-hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
 /* ── Tech Stack Grid ─────────────────────────────────────────────── */
 .tech-stack-grid {
     display: grid;

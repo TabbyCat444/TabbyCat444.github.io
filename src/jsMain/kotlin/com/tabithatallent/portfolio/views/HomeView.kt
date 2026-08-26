@@ -52,9 +52,13 @@ fun homeView() {
         )
 
         ProjectCard(
-            projectName = "More Projects Coming Soon!",
-            projectImage = "images/comingsoon-thumbnail.png",
-            projectDescription = "More projects are coming soon! Stay tuned for updates!"
+            projectName = "Druid Space Program - *WIP*",
+            projectImage = "images/DruidSpaceProgram-Thumbnail.png",
+            projectDescription = "Druid Space Program is an incremental space-builder where you play as an ancient " +
+                    "High Archivist rebuilding a shattered galactic civilization. Shapeshift into forest animals to" +
+                    " automate resource production—scaling from primitive wilderness tools to zero-gravity, " +
+                    "space-faring industry. Collect Astral Amber to unlock lost memories, upgrade animal forms, and" +
+                    " construct orbital infrastructure to reach a Type 2 civilization."
         )
 
         ProjectCard(
