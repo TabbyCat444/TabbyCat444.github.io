@@ -31,7 +31,7 @@ fun japCard() {
                 }
                 A(
                     href = "https://github.com/tabbycat444/JapCrd",
-                    attrs = { classes("project-hero-github-btn") }
+                    attrs = { classes("project-hero-link") }
                 ) {
                     Text("View on GitHub")
                 }
@@ -61,9 +61,8 @@ fun japCard() {
             Text("Category: Educational Tool, Interactive Application")
             Br()
             Text("Repository: ")
-            A(href = "https://github.com/tabbycat444/JapCrd") {
-                Text("github.com/tabbycat444/JapCrd")
-            }
+            A(href = "https://github.com/tabbycat444/JapCrd", attrs = { classes("project-hero-link") })
+            { Text("github.com/tabbycat444/JapCrd") }
         }
 
         // ── TECH STACK ────────────────────────────────────────────────

@@ -8,6 +8,7 @@ import com.tabithatallent.portfolio.components.Footer
 import com.tabithatallent.portfolio.components.Header
 import com.tabithatallent.portfolio.views.heroSection
 import com.tabithatallent.portfolio.views.homeView
+import com.tabithatallent.portfolio.views.projects.cornerSliceBakery
 import com.tabithatallent.portfolio.views.projects.japCard
 import kotlinx.browser.window
 import org.jetbrains.compose.web.css.*
@@ -42,7 +43,7 @@ fun main() {
             }
         }) {
             Div({ style { padding(2.px) } }) {
-                japCard()
+                homeView()
         }
 
         Footer(
