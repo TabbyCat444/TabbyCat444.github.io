@@ -40,13 +40,16 @@ fun homeView() {
 
     Div(attrs = { classes("projects-section") }) {
         ProjectCard(
-            projectName = "More Projects Coming Soon!",
-            projectImage = "images/comingsoon-thumbnail.png",
-            projectDescription = "More projects are coming soon! Stay tuned for updates!"
+            projectName = "Kidnapped by the Fae",
+            projectImage = "images/KidnappedByTheFae-Thumbnail.png",
+            projectDescription = "Navigate a randomly generated fairy kingdom in this zero-dependency Python text" +
+                    " adventure. Collect six mystical gifts, explore interconnected rooms, and reach the Fairy King" +
+                    " before you’re trapped forever. Built with a clean, modular architecture and built-in layout" +
+                    " validation for replayable, educational gameplay."
         )
 
         ProjectCard(
-            projectName = "More Projects Coming Soon!",
+            projectName = "Tax Calculator - *Console Script*",
             projectImage = "images/comingsoon-thumbnail.png",
             projectDescription = "More projects are coming soon! Stay tuned for updates!"
         )
@@ -62,7 +65,7 @@ fun homeView() {
         )
 
         ProjectCard(
-            projectName = "More Projects Coming Soon!",
+            projectName = "Family Planner Hub - *Coming Soon*",
             projectImage = "images/comingsoon-thumbnail.png",
             projectDescription = "More projects are coming soon! Stay tuned for updates!"
         )
