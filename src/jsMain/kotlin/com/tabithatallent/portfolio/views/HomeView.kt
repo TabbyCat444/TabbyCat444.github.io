@@ -2,8 +2,8 @@ package com.tabithatallent.portfolio.views
 
 import androidx.compose.runtime.Composable
 import com.tabithatallent.portfolio.components.ProjectCard
-import com.tabithatallent.portfolio.components.contactSection
-import com.tabithatallent.portfolio.components.heroSection
+import com.tabithatallent.portfolio.components.ContactSection
+import com.tabithatallent.portfolio.components.HeroSection
 import com.tabithatallent.portfolio.nav.ProjectScreen
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H3
@@ -12,7 +12,7 @@ import org.jetbrains.compose.web.dom.Text
 @Composable
 fun homeView(onProjectClick: (ProjectScreen) -> Unit) {
     Div(attrs = { id("about")}) {
-        heroSection()
+        HeroSection()
     }
 
     Div(attrs = { id("projects")}) {
@@ -84,5 +84,5 @@ fun homeView(onProjectClick: (ProjectScreen) -> Unit) {
             H3 { Text("Contact Me") }
         }
     }
-    contactSection()
+    ContactSection()
 }

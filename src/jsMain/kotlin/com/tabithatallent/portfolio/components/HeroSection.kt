@@ -8,7 +8,7 @@ import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
 
 @Composable
-fun heroSection() {
+fun HeroSection() {
     Div(attrs = { classes("hero-section") }) {
 
         Div(attrs = { classes("hero-left") }) {

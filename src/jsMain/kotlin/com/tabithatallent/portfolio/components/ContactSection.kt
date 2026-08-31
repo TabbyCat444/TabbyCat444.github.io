@@ -16,7 +16,7 @@ import org.jetbrains.compose.web.dom.TagElement
 import org.w3c.dom.HTMLTextAreaElement
 
 @Composable
-fun contactSection() {
+fun ContactSection() {
     Div(attrs = { classes("hero-section") }) {
 
         // Left side — contact information
