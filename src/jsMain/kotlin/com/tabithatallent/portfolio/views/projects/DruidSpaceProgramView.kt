@@ -1,12 +1,12 @@
 package com.tabithatallent.portfolio.views.projects
 
 import androidx.compose.runtime.Composable
+import com.tabithatallent.portfolio.components.ZoomableImage
 import org.jetbrains.compose.web.dom.Br
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.H3
 import org.jetbrains.compose.web.dom.H4
-import org.jetbrains.compose.web.dom.Img
 import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
@@ -301,17 +301,17 @@ fun druidSpaceProgram() {
             Text("Screenshots")
         }
         Div(attrs = { classes("project-image-set") }) {
-            Img(
-                src = "images/DruidSpaceProgram-Home.png",
-                alt = "Druid Space Program — Main Screen with Clicker and Animal Workers"
+            ZoomableImage(
+                imageUrl = "images/druidSpaceProgram/DruidSpaceProgram-Home.png",
+                imageAlt = "Druid Space Program — Main Screen with Clicker and Animal Workers"
             )
-            Img(
-                src = "images/DruidSpaceProgram-Upgrades.png",
-                alt = "Druid Space Program — Upgrades Screen"
+            ZoomableImage(
+                imageUrl = "images/druidSpaceProgram/DruidSpaceProgram-Upgrades.png",
+                imageAlt = "Druid Space Program — Upgrades Screen"
             )
-            Img(
-                src = "images/DruidSpaceProgram-Settings.png",
-                alt = "Druid Space Program — Settings Screen"
+            ZoomableImage(
+                imageUrl = "images/druidSpaceProgram/DruidSpaceProgram-Settings.png",
+                imageAlt = "Druid Space Program — Settings Screen"
             )
         }
 
@@ -355,11 +355,11 @@ private fun featuresList(vararg items: String) {
 
 @Composable
 private fun deckItem(name: String, count: String) {
-    Div(attrs = { classes("deck-item") }) {
-        Span(attrs = { classes("deck-number") }) {
+    Div(attrs = { classes("resource-item") }) {
+        Span(attrs = { classes("resource-number") }) {
             Text(count)
         }
-        Span(attrs = { classes("deck-name") }) {
+        Span(attrs = { classes("resource-name") }) {
             Text(name)
         }
     }

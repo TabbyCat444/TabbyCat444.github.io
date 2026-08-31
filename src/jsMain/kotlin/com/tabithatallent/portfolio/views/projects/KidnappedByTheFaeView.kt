@@ -1,13 +1,14 @@
 package com.tabithatallent.portfolio.views.projects
 
 import androidx.compose.runtime.Composable
+import com.tabithatallent.portfolio.components.CodeSandboxEmbed
+import com.tabithatallent.portfolio.components.ZoomableImage
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Br
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.H3
 import org.jetbrains.compose.web.dom.H4
-import org.jetbrains.compose.web.dom.Img
 import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
@@ -242,19 +243,28 @@ fun kidnappedByTheFae() {
             Text("Screenshots")
         }
         Div(attrs = { classes("project-image-set") }) {
-            Img(
-                src = "images/KidnappedByTheFae-Start.png",
-                alt = "Kidnapped By The Fae — Terminal Gameplay Start"
+            ZoomableImage(
+                imageUrl = "images/kidnappedByTheFae/KidnappedByTheFae-Start.png",
+                imageAlt = "Kidnapped By The Fae — Terminal Gameplay Start"
             )
-            Img(
-                src = "images/KidnappedByTheFae-Loss.png",
-                alt = "Kidnapped By The Fae — Terminal Gameplay Loss"
+            ZoomableImage(
+                imageUrl = "images/kidnappedByTheFae/KidnappedByTheFae-Loss.png",
+                imageAlt = "Kidnapped By The Fae — Terminal Gameplay Loss"
             )
-            Img(
-                src = "images/KidnappedByTheFae-Win.png",
-                alt = "Kidnapped By The Fae — Terminal Gameplay Win"
+            ZoomableImage(
+                imageUrl = "images/kidnappedByTheFae/KidnappedByTheFae-Win.png",
+                imageAlt = "Kidnapped By The Fae — Terminal Gameplay Win"
             )
         }
+
+        // ── PLAY DEMO ────────────────────────────────────────────────
+        H3(attrs = { classes("project-view-subtitle") }) {
+            Text("Interactive Demo")
+        }
+        CodeSandboxEmbed(
+            embedUrl = "https://stackblitz.com/edit/kidnapped-by-the-fae?embed=1&file=main.py&hideExplorer=1&hideNavigation=1&view=preview",
+            title = "Kidnapped by the Fae Live Demo"
+        )
 
         // ── Footer ────────────────────────────────────────────────────
         Div(attrs = { classes("project-footer") }) {
@@ -296,11 +306,11 @@ private fun featuresList(vararg items: String) {
 
 @Composable
 private fun deckItem(name: String, count: String) {
-    Div(attrs = { classes("deck-item") }) {
-        Span(attrs = { classes("deck-number") }) {
+    Div(attrs = { classes("resource-item") }) {
+        Span(attrs = { classes("resource-number") }) {
             Text(count)
         }
-        Span(attrs = { classes("deck-name") }) {
+        Span(attrs = { classes("resource-name") }) {
             Text(name)
         }
     }
@@ -310,11 +320,11 @@ private fun deckItem(name: String, count: String) {
 
 @Composable
 private fun draftItem(name: String, count: String) {
-    Div(attrs = { classes("deck-item") }) {
-        Span(attrs = { classes("deck-number") }) {
+    Div(attrs = { classes("resource-item") }) {
+        Span(attrs = { classes("resource-number") }) {
             Text(count)
         }
-        Span(attrs = { classes("deck-name") }) {
+        Span(attrs = { classes("resource-name") }) {
             Text(name)
         }
     }

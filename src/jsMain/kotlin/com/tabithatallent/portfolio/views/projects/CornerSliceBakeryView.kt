@@ -1,16 +1,17 @@
 package com.tabithatallent.portfolio.views.projects
 
 import androidx.compose.runtime.Composable
+import com.tabithatallent.portfolio.components.ZoomableImage
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Br
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.H3
 import org.jetbrains.compose.web.dom.H4
-import org.jetbrains.compose.web.dom.Img
 import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
+
 
 @Composable
 fun cornerSliceBakery() {
@@ -233,9 +234,9 @@ fun cornerSliceBakery() {
             Text("Screenshots")
         }
         Div(attrs = { classes("project-image-set") }) {
-            Img(src = "images/CornerSliceBakery-Home.png", alt = "The Corner Slice Bakery — Home Page")
-            Img(src = "images/CornerSliceBakery-Menu.png", alt = "The Corner Slice Bakery — Menu Page")
-            Img(src = "images/CornerSliceBakery-ContactCatering.png", alt = "The Corner Slice Bakery — Catering Page")
+            ZoomableImage(imageUrl = "images/cornerSliceBakery/CornerSliceBakery-Home.png", imageAlt = "The Corner Slice Bakery — Home Page")
+            ZoomableImage(imageUrl = "images/cornerSliceBakery/CornerSliceBakery-Menu.png", imageAlt = "The Corner Slice Bakery — Menu Page")
+            ZoomableImage(imageUrl = "images/cornerSliceBakery/CornerSliceBakery-ContactCatering.png", imageAlt = "The Corner Slice Bakery — Catering Page")
         }
 
         // ── Footer ────────────────────────────────────────────────────
@@ -273,8 +274,8 @@ private fun featuresList(vararg items: String) {
 
 @Composable
 private fun deckItem(name: String, count: String) {
-    Div(attrs = { classes("deck-item") }) {
-        Span(attrs = { classes("deck-number") }) { Text(count) }
-        Span(attrs = { classes("deck-name") }) { Text(name) }
+    Div(attrs = { classes("resource-item") }) {
+        Span(attrs = { classes("resource-number") }) { Text(count) }
+        Span(attrs = { classes("resource-name") }) { Text(name) }
     }
 }
