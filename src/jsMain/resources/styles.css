@@ -768,3 +768,12 @@ h4 {
     .button-spacer {
         margin-bottom: 5px;
     }
+
+/* ── Zoomable Image (used inside modal overlays) ─────────────────── */
+.zoomed-image {
+    width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+

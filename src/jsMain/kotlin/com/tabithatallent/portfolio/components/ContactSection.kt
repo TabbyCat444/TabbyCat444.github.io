@@ -102,6 +102,17 @@ fun contactSection() {
                     }
                 )
 
+                Input(type = InputType.Hidden, attrs = {
+                    attr("name", "_type")
+                    attr("value", "html")
+                })
+
+                Input(type = InputType.Hidden, attrs = {
+                    attr("name", "_honeypot")
+                    attr("style", "display:none")
+                })
+
+
                 // Name field
                 Label(attrs = { classes("contact-form-label") }) {
                     Text("Name: ")

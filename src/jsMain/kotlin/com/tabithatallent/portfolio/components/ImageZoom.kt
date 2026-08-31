@@ -46,7 +46,7 @@ fun ZoomableImage(
                         src = imageUrl,
                         alt = imageAlt,
                         attrs = {
-                            attr("style", "width: 100%; max-height: 80vh; object-fit: contain; border-radius: 8px;")
+                            classes("zoomed-image")
                         }
                     )
                 }

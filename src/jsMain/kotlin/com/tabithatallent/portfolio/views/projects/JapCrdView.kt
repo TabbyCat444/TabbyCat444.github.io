@@ -222,7 +222,6 @@ fun japCard() {
         )
 
         // ── SCREENSHOTS ───────────────────────────────────────────────
-        // ── SCREENSHOTS ───────────────────────────────────────────────
         H3(attrs = { classes("project-view-subtitle") }) {
             Text("Screenshots — Light Mode")
         }
