@@ -8,7 +8,7 @@ import com.tabithatallent.portfolio.views.projects.kidnappedByTheFae
 import com.tabithatallent.portfolio.views.projects.taxCalculator
 
 sealed class ProjectScreen(val name: String) {
-    data object JapCrd : ProjectScreen("JapCrd")
+    data object JapCrd : ProjectScreen("Jap Card")
     data object CornerSliceBakery : ProjectScreen("The Corner Slice Bakery")
     data object KidnappedByTheFae : ProjectScreen("Kidnapped by the Fae")
     data object TaxCalculator : ProjectScreen("Tax Calculator")

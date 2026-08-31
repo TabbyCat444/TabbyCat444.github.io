@@ -1,7 +1,7 @@
 package com.tabithatallent.portfolio.components
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.DisposableEffect
 import com.tabithatallent.portfolio.nav.ProjectScreen
 import kotlinx.browser.document
 import org.jetbrains.compose.web.attributes.ButtonType
@@ -13,9 +13,13 @@ fun ProjectModal(
     project: ProjectScreen,
     onClose: () -> Unit
 ) {
-    LaunchedEffect(Unit) {
+    DisposableEffect(Unit) {
         document.body?.classList?.add("modal-open")
+        onDispose {
+            document.body?.classList?.remove("modal-open")
+        }
     }
+
 
     Div(attrs = {
         classes("modal-backdrop")
