@@ -1,4 +1,4 @@
-package com.tabithatallent.portfolio.views
+package com.tabithatallent.portfolio.components
 
 import androidx.compose.runtime.Composable
 import org.jetbrains.compose.web.dom.Div
@@ -19,7 +19,7 @@ fun heroSection() {
             P() {
                 Text("Hi, I'm Tabitha, a passionate software engineer with a love for creating innovative " +
                         "solutions. I’m a Summa Cum Laude Computer Science graduate with a passion for full-stack " +
-                        "engineering, native Android, and multiplatform development using Kotlin, Java, C++, and more. " +
+                        "engineering, native Android, and web/multiplatform development using Kotlin, Java, C++, and more. " +
                         "Whether I’m untangling low-level system mechanics or crafting responsive interfaces with " +
                         "Kotlin/JS and Compose, I focus on writing performant, maintainable code that delivers real " +
                         "user value.")
@@ -40,7 +40,7 @@ fun heroSection() {
             P{ Span(attrs = { classes("hero-tech-stack-category") }) {
                 Text("Programming/Markup Languages: ")
             }
-                Text("Kotlin, Java, JavaScript, C#, C++, Python, HTML5, CSS, Tailwind CSS")
+                Text("Kotlin, Java, JavaScript, C#, C++, Python, HTML5, CSS/Tailwind CSS, Assembly")
             }
 
             P{ Span(attrs = { classes("hero-tech-stack-category") }) {
