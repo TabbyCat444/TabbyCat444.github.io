@@ -258,13 +258,12 @@ fun kidnappedByTheFae() {
         }
 
         // ── PLAY DEMO ────────────────────────────────────────────────
-        H3(attrs = { classes("project-view-subtitle") }) {
+        /* H3(attrs = { classes("project-view-subtitle") }) {
             Text("Interactive Demo")
         }
         CodeSandboxEmbed(
             embedUrl = "https://stackblitz.com/edit/kidnapped-by-the-fae?embed=1&file=main.py&hideExplorer=1&hideNavigation=1&view=preview",
-            title = "Kidnapped by the Fae Live Demo"
-        )
+            title = "Kidnapped by the Fae Live Demo")*/
 
         // ── Footer ────────────────────────────────────────────────────
         Div(attrs = { classes("project-footer") }) {
