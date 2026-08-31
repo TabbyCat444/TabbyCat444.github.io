@@ -1,5 +1,6 @@
 package com.tabithatallent.portfolio.views.projects
 
+import com.tabithatallent.portfolio.components.ZoomableImage
 import androidx.compose.runtime.Composable
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Br
@@ -7,10 +8,10 @@ import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.H3
 import org.jetbrains.compose.web.dom.H4
-import org.jetbrains.compose.web.dom.Img
 import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
+import org.jetbrains.compose.web.dom.Video
 
 @Composable
 fun japCard() {
@@ -219,21 +220,22 @@ fun japCard() {
         )
 
         // ── SCREENSHOTS ───────────────────────────────────────────────
+        // ── SCREENSHOTS ───────────────────────────────────────────────
         H3(attrs = { classes("project-view-subtitle") }) {
             Text("Screenshots — Light Mode")
         }
         Div(attrs = { classes("project-image-set") }) {
-            Img(
-                src = "images/JapCrdMenuLight.png",
-                alt = "JapCrd — Light Mode Home Screen"
+            ZoomableImage(
+                imageUrl = "images/japCrd/JapCrdMenuLight.png",
+                imageAlt = "JapCrd — Light Mode Home Screen"
             )
-            Img(
-                src = "images/JapCrdFlashcardFrontLight.png",
-                alt = "JapCrd — Light Mode Flashcard Front"
+            ZoomableImage(
+                imageUrl = "images/japCrd/JapCrdFlashcardFrontLight.png",
+                imageAlt = "JapCrd — Light Mode Flashcard Front"
             )
-            Img(
-                src = "images/JapCrdFlashcardBackLight.png",
-                alt = "JapCrd — Light Mode Flashcard Back"
+            ZoomableImage(
+                imageUrl = "images/japCrd/JapCrdFlashcardBackLight.png",
+                imageAlt = "JapCrd — Light Mode Flashcard Back"
             )
         }
 
@@ -241,23 +243,42 @@ fun japCard() {
             Text("Screenshots — Dark Mode")
         }
         Div(attrs = { classes("project-image-set") }) {
-            Img(
-                src = "images/JapCrdMenu.png",
-                alt = "JapCrd — Dark Mode Home Screen"
+            ZoomableImage(
+                imageUrl = "images/japCrd/JapCrdMenu.png",
+                imageAlt = "JapCrd — Dark Mode Home Screen"
             )
-            Img(
-                src = "images/JapCrdFlashcardFront.png",
-                alt = "JapCrd — Dark Mode Flashcard Front"
+            ZoomableImage(
+                imageUrl = "images/japCrd/JapCrdFlashcardFront.png",
+                imageAlt = "JapCrd — Dark Mode Flashcard Front"
             )
-            Img(
-                src = "images/JapCrdFlashcardBack.png",
-                alt = "JapCrd — Dark Mode Flashcard Back"
+            ZoomableImage(
+                imageUrl = "images/japCrd/JapCrdFlashcardBack.png",
+                imageAlt = "JapCrd — Dark Mode Flashcard Back"
             )
         }
 
         // ── DEMO VIDEO ────────────────────────────────────────────────
         H3(attrs = { classes("project-view-subtitle") }) {
             Text("Demo Video")
+        }
+
+        Div(attrs = { classes("demo-video-row") }) {
+            Video(
+                attrs = {
+                    attr("src", "videos/japCrd/JapCrd-DarkVid.mp4")
+                    attr("controls", "")
+                    attr("playsinline", "")
+                    classes("demo-video")
+                }
+            )
+            Video(
+                attrs = {
+                    attr("src", "videos/japCrd/JapCrd-LightVid.mp4")
+                    attr("controls", "")
+                    attr("playsinline", "")
+                    classes("demo-video")
+                }
+            )
         }
     }
 }
@@ -294,11 +315,11 @@ private fun featuresList(vararg items: String) {
 
 @Composable
 private fun deckItem(name: String, count: String) {
-    Div(attrs = { classes("deck-item") }) {
-        Span(attrs = { classes("deck-number") }) {
+    Div(attrs = { classes("resource-item") }) {
+        Span(attrs = { classes("resource-number") }) {
             Text(count)
         }
-        Span(attrs = { classes("deck-name") }) {
+        Span(attrs = { classes("resource-name") }) {
             Text(name)
         }
     }
