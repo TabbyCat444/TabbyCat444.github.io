@@ -2,13 +2,15 @@ package com.tabithatallent.portfolio.views.projects
 
 import androidx.compose.runtime.Composable
 import com.tabithatallent.portfolio.components.ZoomableImage
+import com.tabithatallent.portfolio.components.ResourceItem
+import com.tabithatallent.portfolio.components.FeaturesList
+import com.tabithatallent.portfolio.components.TechChip
 import org.jetbrains.compose.web.dom.Br
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.H3
 import org.jetbrains.compose.web.dom.H4
 import org.jetbrains.compose.web.dom.P
-import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
 
 @Composable
@@ -63,21 +65,21 @@ fun druidSpaceProgram() {
             Text("Tech Stack")
         }
         Div(attrs = { classes("tech-stack-grid") }) {
-            techChip("Game Engine", "Godot 4.6 (C#)")
-            techChip("Language", "C# (.NET)")
-            techChip("Arithmetic", "System.Numerics.BigInteger")
-            techChip("Architecture", "Singleton GameState + Interface-based Systems")
-            techChip("State Management", "MasterGameState (single source of truth)")
-            techChip("Tick Engine", "Frame-driven global tick with ITickable registry")
-            techChip("Persistence", "JSON serialization via MasterSaveManager")
-            techChip("UI Pattern", "Godot Control nodes + Controller scripts (thin-skin)")
+            TechChip("Game Engine", "Godot 4.6 (C#)")
+            TechChip("Language", "C# (.NET)")
+            TechChip("Arithmetic", "System.Numerics.BigInteger")
+            TechChip("Architecture", "Singleton GameState + Interface-based Systems")
+            TechChip("State Management", "MasterGameState (single source of truth)")
+            TechChip("Tick Engine", "Frame-driven global tick with ITickable registry")
+            TechChip("Persistence", "JSON serialization via MasterSaveManager")
+            TechChip("UI Pattern", "Godot Control nodes + Controller scripts (thin-skin)")
         }
 
         // ── KEY FEATURES ──────────────────────────────────────────────
         H3(attrs = { classes("project-view-subtitle") }) {
             Text("Key Features")
         }
-        featuresList(
+        FeaturesList(
             "Core Clicker — tap the World-Tree to harvest Astral Amber, the primary progression currency",
             "Shapeshifting Forms — switch between Mole, Bear, Owl, and other forms, each with unique passive bonuses",
             "Idle Automation — deploy animal workers (Moles, Beavers, Spiders, etc.) that generate resources on timed ticks",
@@ -93,10 +95,10 @@ fun druidSpaceProgram() {
             Text("Resource Tiers")
         }
         Div(attrs = { classes("decks-list") }) {
-            deckItem("Tier 1 — Nature", "Dirt, Wood, Berries, Water, Stone, Herbs, Vines, Web")
-            deckItem("Tier 2 — Refined/Magic", "Living Soil, Enchanted Lumber, Glowing Sap, Liquid Mana, Crystallized Stone")
-            deckItem("Tier 3 — Aerospace", "Rocket Fuel, Lunar Silk, Meteorite Ceramic, Quantum Tendrils, Nebula Serum")
-            deckItem("Currency", "Astral Amber (primary progression)")
+            ResourceItem("Tier 1 — Nature", "Dirt, Wood, Berries, Water, Stone, Herbs, Vines, Web")
+            ResourceItem("Tier 2 — Refined/Magic", "Living Soil, Enchanted Lumber, Glowing Sap, Liquid Mana, Crystallized Stone")
+            ResourceItem("Tier 3 — Aerospace", "Rocket Fuel, Lunar Silk, Meteorite Ceramic, Quantum Tendrils, Nebula Serum")
+            ResourceItem("Currency", "Astral Amber (primary progression)")
         }
 
         // ── ANIMAL WORKERS ────────────────────────────────────────────
@@ -104,14 +106,14 @@ fun druidSpaceProgram() {
             Text("Animal Workers")
         }
         Div(attrs = { classes("decks-list") }) {
-            deckItem("Mole", "Dirt / Zero-G Compost production")
-            deckItem("Beaver", "Wood / Star Bark production")
-            deckItem("Spider", "Web / Lunar Silk production")
-            deckItem("Wolf", "Water / Rocket Fuel production")
-            deckItem("Raccoon", "Berries / Stellar Resin production")
-            deckItem("Bear", "Stone / Meteorite Ceramic production")
-            deckItem("Owl", "Herbs / Nebula Serum production")
-            deckItem("Parrot", "Vines / Quantum Tendrils production")
+            ResourceItem("Mole", "Dirt / Zero-G Compost production")
+            ResourceItem("Beaver", "Wood / Star Bark production")
+            ResourceItem("Spider", "Web / Lunar Silk production")
+            ResourceItem("Wolf", "Water / Rocket Fuel production")
+            ResourceItem("Raccoon", "Berries / Stellar Resin production")
+            ResourceItem("Bear", "Stone / Meteorite Ceramic production")
+            ResourceItem("Owl", "Herbs / Nebula Serum production")
+            ResourceItem("Parrot", "Vines / Quantum Tendrils production")
         }
 
         // ── THE CHALLENGE ─────────────────────────────────────────────
@@ -275,7 +277,7 @@ fun druidSpaceProgram() {
         H3(attrs = { classes("project-view-subtitle") }) {
             Text("Key Takeaways & Lessons Learned")
         }
-        featuresList(
+        FeaturesList(
             "Interface-first design — defining contracts (IWorker, IGenerator, ITickable) before implementation kept the codebase modular and made adding new animal species trivial",
             "BigInteger for incremental games — standard integer types fail catastrophically at late-game scales; BigInteger with exponential cost curves is essential for this genre",
             "Pure backend separation — keeping the C# core completely free of Godot node references means the math engine can be unit-tested independently and the UI can be completely re-skinned without touching logic",
@@ -287,7 +289,7 @@ fun druidSpaceProgram() {
         H3(attrs = { classes("project-view-subtitle") }) {
             Text("Roadmap")
         }
-        featuresList(
+        FeaturesList(
             "Prestige / Reset system — wipe progress for permanent multipliers based on Tier 1/2/3 achievement",
             "Full asset pipeline — replace placeholder UI with hand-drawn sprites, habitat visuals, and animated click feedback",
             "Shapeshifting active mechanics — Bear form for boosted clicking, Owl form for offline speed-up, with cooldowns and mana costs",
@@ -323,44 +325,3 @@ fun druidSpaceProgram() {
     }
 }
 
-// ── HELPER: Tech Stack Chip ──────────────────────────────────────────
-
-@Composable
-private fun techChip(label: String, value: String) {
-    Div(attrs = { classes("tech-chip") }) {
-        Span(attrs = { classes("tech-chip-label") }) {
-            Text(label)
-        }
-        Div(attrs = { classes("tech-chip-value") }) {
-            Text(value)
-        }
-    }
-}
-
-// ── HELPER: Feature Bullet ───────────────────────────────────────────
-
-@Composable
-private fun featuresList(vararg items: String) {
-    items.forEach { item ->
-        P(attrs = { classes("feature-item") }) {
-            Span(attrs = { classes("feature-bullet") }) {
-                Text("• ")
-            }
-            Text(item)
-        }
-    }
-}
-
-// ── HELPER: Deck/Row Item ────────────────────────────────────────────
-
-@Composable
-private fun deckItem(name: String, count: String) {
-    Div(attrs = { classes("resource-item") }) {
-        Span(attrs = { classes("resource-number") }) {
-            Text(count)
-        }
-        Span(attrs = { classes("resource-name") }) {
-            Text(name)
-        }
-    }
-}

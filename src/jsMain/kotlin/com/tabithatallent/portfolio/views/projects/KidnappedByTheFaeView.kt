@@ -3,6 +3,9 @@ package com.tabithatallent.portfolio.views.projects
 import androidx.compose.runtime.Composable
 import com.tabithatallent.portfolio.components.CodeSandboxEmbed
 import com.tabithatallent.portfolio.components.ZoomableImage
+import com.tabithatallent.portfolio.components.ResourceItem
+import com.tabithatallent.portfolio.components.FeaturesList
+import com.tabithatallent.portfolio.components.TechChip
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Br
 import org.jetbrains.compose.web.dom.Div
@@ -10,7 +13,6 @@ import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.H3
 import org.jetbrains.compose.web.dom.H4
 import org.jetbrains.compose.web.dom.P
-import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
 
 @Composable
@@ -68,21 +70,21 @@ fun kidnappedByTheFae() {
             Text("Tech Stack")
         }
         Div(attrs = { classes("tech-stack-grid") }) {
-            techChip("Language", "Python 3")
-            techChip("Dependencies", "None (stdlib only)")
-            techChip("Architecture", "Modular — 4 files, single responsibility")
-            techChip("Data Model", "Dictionary-based room graph")
-            techChip("Randomization", "Random layout selection per session")
-            techChip("Validation", "BFS reachability check at import time")
-            techChip("Input Handling", "Normalized string parsing")
-            techChip("State Management", "Module-level inventory + room key")
+            TechChip("Language", "Python 3")
+            TechChip("Dependencies", "None (stdlib only)")
+            TechChip("Architecture", "Modular — 4 files, single responsibility")
+            TechChip("Data Model", "Dictionary-based room graph")
+            TechChip("Randomization", "Random layout selection per session")
+            TechChip("Validation", "BFS reachability check at import time")
+            TechChip("Input Handling", "Normalized string parsing")
+            TechChip("State Management", "Module-level inventory + room key")
         }
 
         // ── KEY FEATURES ──────────────────────────────────────────────
         H3(attrs = { classes("project-view-subtitle") }) {
             Text("Key Features")
         }
-        featuresList(
+        FeaturesList(
             "Randomized layouts — one of four distinct room maps is chosen each game, changing room connections and item locations",
             "Six collectible items — silver leaf, river pebble, small bone, exotic mushroom, pretty feather, opal",
             "Win/lose condition — reaching the Fairy King with all six gifts returns you home; fewer items means permanent exile",
@@ -96,12 +98,12 @@ fun kidnappedByTheFae() {
             Text("Collectible Items")
         }
         Div(attrs = { classes("decks-list") }) {
-            deckItem("Silver Leaf", "Found in Weird Silver Trees")
-            deckItem("River Pebble", "Found in Forest River")
-            deckItem("Small Bone", "Found in Animal Trail")
-            deckItem("Exotic Mushroom", "Found in Small Clearing")
-            deckItem("Pretty Feather", "Found in Bird Nest Shrubs")
-            deckItem("Opal", "Found in Old Fallen Tree")
+            ResourceItem("Silver Leaf", "Found in Weird Silver Trees")
+            ResourceItem("River Pebble", "Found in Forest River")
+            ResourceItem("Small Bone", "Found in Animal Trail")
+            ResourceItem("Exotic Mushroom", "Found in Small Clearing")
+            ResourceItem("Pretty Feather", "Found in Bird Nest Shrubs")
+            ResourceItem("Opal", "Found in Old Fallen Tree")
         }
 
         // ── THE CHALLENGE ─────────────────────────────────────────────
@@ -207,17 +209,17 @@ fun kidnappedByTheFae() {
             Text("Room Layouts")
         }
         Div(attrs = { classes("decks-list") }) {
-            deckItem("Layout 1", "8 rooms — linear path to Fairy King")
-            deckItem("Layout 2", "8 rooms — Fairy King adjacent to start, silver leaf far end")
-            deckItem("Layout 3", "8 rooms — Animal Trail shortcuts to Fairy King")
-            draftItem("Layout 4", "8 rooms — Forest River connects directly to Fairy King")
+            ResourceItem("Layout 1", "8 rooms — linear path to Fairy King")
+            ResourceItem("Layout 2", "8 rooms — Fairy King adjacent to start, silver leaf far end")
+            ResourceItem("Layout 3", "8 rooms — Animal Trail shortcuts to Fairy King")
+            ResourceItem("Layout 4", "8 rooms — Forest River connects directly to Fairy King")
         }
 
         // ── KEY TAKEAWAYS ─────────────────────────────────────────────
         H3(attrs = { classes("project-view-subtitle") }) {
             Text("Key Takeaways & Lessons Learned")
         }
-        featuresList(
+        FeaturesList(
             "Data-driven design — defining rooms as dictionaries instead of hardcoding navigation made it trivial to create four unique layouts",
             "Validation as a first-class concern — BFS checks at import time catch errors before runtime, a pattern applicable far beyond game development",
             "Input normalization simplicity — a one-liner for whitespace/case normalization eliminated a whole class of edge-case bugs",
@@ -229,7 +231,7 @@ fun kidnappedByTheFae() {
         H3(attrs = { classes("project-view-subtitle") }) {
             Text("Roadmap")
         }
-        featuresList(
+        FeaturesList(
             "More room layouts — expand from 4 to 8+ randomized maps",
             "Interactive story text — contextual descriptions per room beyond just item presence",
             "Item descriptions — flavor text when collecting each gift",
@@ -269,62 +271,6 @@ fun kidnappedByTheFae() {
         Div(attrs = { classes("project-footer") }) {
             P { Text("Created by Tabitha Tallent") }
             P { Text("MIT License") }
-        }
-    }
-}
-
-// ── HELPER: Tech Stack Chip ──────────────────────────────────────────
-
-@Composable
-private fun techChip(label: String, value: String) {
-    Div(attrs = { classes("tech-chip") }) {
-        Span(attrs = { classes("tech-chip-label") }) {
-            Text(label)
-        }
-        Div(attrs = { classes("tech-chip-value") }) {
-            Text(value)
-        }
-    }
-}
-
-// ── HELPER: Feature Bullet ───────────────────────────────────────────
-
-@Composable
-private fun featuresList(vararg items: String) {
-    items.forEach { item ->
-        P(attrs = { classes("feature-item") }) {
-            Span(attrs = { classes("feature-bullet") }) {
-                Text("• ")
-            }
-            Text(item)
-        }
-    }
-}
-
-// ── HELPER: Deck/Row Item ────────────────────────────────────────────
-
-@Composable
-private fun deckItem(name: String, count: String) {
-    Div(attrs = { classes("resource-item") }) {
-        Span(attrs = { classes("resource-number") }) {
-            Text(count)
-        }
-        Span(attrs = { classes("resource-name") }) {
-            Text(name)
-        }
-    }
-}
-
-// ── HELPER: Draft Item (for Roadmap) ─────────────────────────────────
-
-@Composable
-private fun draftItem(name: String, count: String) {
-    Div(attrs = { classes("resource-item") }) {
-        Span(attrs = { classes("resource-number") }) {
-            Text(count)
-        }
-        Span(attrs = { classes("resource-name") }) {
-            Text(name)
         }
     }
 }

@@ -1,6 +1,9 @@
 package com.tabithatallent.portfolio.views.projects
 
 import com.tabithatallent.portfolio.components.ZoomableImage
+import com.tabithatallent.portfolio.components.ResourceItem
+import com.tabithatallent.portfolio.components.FeaturesList
+import com.tabithatallent.portfolio.components.TechChip
 import androidx.compose.runtime.Composable
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Br
@@ -9,7 +12,6 @@ import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.H3
 import org.jetbrains.compose.web.dom.H4
 import org.jetbrains.compose.web.dom.P
-import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
 import org.jetbrains.compose.web.dom.Video
 
@@ -67,21 +69,21 @@ fun japCard() {
             Text("Tech Stack")
         }
         Div(attrs = { classes("tech-stack-grid") }) {
-            techChip("Language", "Kotlin")
-            techChip("UI Framework", "Jetpack Compose")
-            techChip("Design System", "Material 3")
-            techChip("Architecture", "MVVM (Model-View-ViewModel)")
-            techChip("Layout", "ConstraintLayout Compose")
-            techChip("Typography", "Google Fonts API (Alegreya + Noto Sans Japanese)")
-            techChip("Minimum SDK", "30 (Android 11)")
-            techChip("Target SDK", "36 (Android 14)")
+            TechChip("Language", "Kotlin")
+            TechChip("UI Framework", "Jetpack Compose")
+            TechChip("Design System", "Material 3")
+            TechChip("Architecture", "MVVM (Model-View-ViewModel)")
+            TechChip("Layout", "ConstraintLayout Compose")
+            TechChip("Typography", "Google Fonts API (Alegreya + Noto Sans Japanese)")
+            TechChip("Minimum SDK", "30 (Android 11)")
+            TechChip("Target SDK", "36 (Android 14)")
         }
 
         // ── FEATURES ──────────────────────────────────────────────────
         H3(attrs = { classes("project-view-subtitle") }) {
             Text("Key Features")
         }
-        featuresList(
+        FeaturesList(
             "Interactive Card Flip — tap to reveal romanization and pronunciation hints",
             "Deck Navigation — seamlessly move through cards with Prev and Next buttons",
             "Shuffle Mode — randomize the deck to break muscle memory during study",
@@ -95,10 +97,10 @@ fun japCard() {
             Text("Decks Included")
         }
         Div(attrs = { classes("decks-list") }) {
-            deckItem("Basic Hiragana", "46 characters")
-            deckItem("Voiced Hiragana — Dakuten", "25 characters")
-            deckItem("Contracted Hiragana — Yōon", "36 characters")
-            deckItem("All Hiragana — Comprehensive", "107 characters")
+            ResourceItem("Basic Hiragana", "46 characters")
+            ResourceItem("Voiced Hiragana — Dakuten", "25 characters")
+            ResourceItem("Contracted Hiragana — Yōon", "36 characters")
+            ResourceItem("All Hiragana — Comprehensive", "107 characters")
         }
 
         // ── CHALLENGE ─────────────────────────────────────────────────
@@ -200,7 +202,7 @@ fun japCard() {
         H3(attrs = { classes("project-view-subtitle") }) {
             Text("Key Takeaways & Lessons Learned")
         }
-        featuresList(
+        FeaturesList(
             "User-Centric UI — emphasized speed and responsiveness so learning loops remain tight and engaging",
             "Scalable Data Architecture — designed data parsing logic to easily support external CSV/JSON imports for custom user-created flashcard decks",
             "Compose Best Practices — learned to isolate UI state, separate components, and leverage Material 3 theming effectively"
@@ -210,7 +212,7 @@ fun japCard() {
         H3(attrs = { classes("project-view-subtitle") }) {
             Text("Roadmap")
         }
-        featuresList(
+        FeaturesList(
             "Favorites system",
             "User-created custom decks",
             "Study progress tracking & statistics",
@@ -279,48 +281,6 @@ fun japCard() {
                     classes("demo-video")
                 }
             )
-        }
-    }
-}
-
-// ── HELPER: Tech Stack Chip ──────────────────────────────────────────────────
-
-@Composable
-private fun techChip(label: String, value: String) {
-    Div(attrs = { classes("tech-chip") }) {
-        Span(attrs = { classes("tech-chip-label") }) {
-            Text(label)
-        }
-        Div(attrs = { classes("tech-chip-value") }) {
-            Text(value)
-        }
-    }
-}
-
-// ── HELPER: Feature Bullet ───────────────────────────────────────────────────
-
-@Composable
-private fun featuresList(vararg items: String) {
-    items.forEach { item ->
-        P(attrs = { classes("feature-item") }) {
-            Span(attrs = { classes("feature-bullet") }) {
-                Text("• ")
-            }
-            Text(item)
-        }
-    }
-}
-
-// ── HELPER: Deck Row ─────────────────────────────────────────────────────────
-
-@Composable
-private fun deckItem(name: String, count: String) {
-    Div(attrs = { classes("resource-item") }) {
-        Span(attrs = { classes("resource-number") }) {
-            Text(count)
-        }
-        Span(attrs = { classes("resource-name") }) {
-            Text(name)
         }
     }
 }

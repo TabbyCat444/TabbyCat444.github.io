@@ -1,6 +1,8 @@
 package com.tabithatallent.portfolio.views.projects
 
 import androidx.compose.runtime.Composable
+import com.tabithatallent.portfolio.components.FeaturesList
+import com.tabithatallent.portfolio.components.TechChip
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Br
 import org.jetbrains.compose.web.dom.Div
@@ -8,7 +10,6 @@ import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.H3
 import org.jetbrains.compose.web.dom.H4
 import org.jetbrains.compose.web.dom.P
-import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
 import org.jetbrains.compose.web.dom.Video
 
@@ -69,21 +70,21 @@ fun taxCalculator() {
             Text("Tech Stack")
         }
         Div(attrs = { classes("tech-stack-grid") }) {
-            techChip("Language", "Python 3.13+")
-            techChip("Dependencies", "None (stdlib only)")
-            techChip("Precision Math", "decimal.Decimal with ROUND_HALF_UP")
-            techChip("Architecture", "Functional — input, calculation, output")
-            techChip("Type Hints", "Full annotation coverage")
-            techChip("Build Tool", "uv (Python package manager)")
-            techChip("Target Region", "Texarkana, TX")
-            techChip("License", "Open Source Template")
+            TechChip("Language", "Python 3.13+")
+            TechChip("Dependencies", "None (stdlib only)")
+            TechChip("Precision Math", "decimal.Decimal with ROUND_HALF_UP")
+            TechChip("Architecture", "Functional — input, calculation, output")
+            TechChip("Type Hints", "Full annotation coverage")
+            TechChip("Build Tool", "uv (Python package manager)")
+            TechChip("Target Region", "Texarkana, TX")
+            TechChip("License", "Open Source Template")
         }
 
         // ── KEY FEATURES ──────────────────────────────────────────────
         H3(attrs = { classes("project-view-subtitle") }) {
             Text("Key Features")
         }
-        featuresList(
+        FeaturesList(
             "Dual Tax Calculation — separates standard items from mobile devices, which carry a specific additional tax rate",
             "Precision Math — uses Python's Decimal module for exact cent-level accuracy, avoiding floating-point errors",
             "Simple CLI — no installation or heavy dependencies required; just run the script from the terminal",
@@ -201,7 +202,7 @@ fun taxCalculator() {
         H3(attrs = { classes("project-view-subtitle") }) {
             Text("Key Takeaways & Lessons Learned")
         }
-        featuresList(
+        FeaturesList(
             "Decimal over float — financial calculations demand Decimal with ROUND_HALF_UP; float arithmetic introduces hidden rounding errors that are unacceptable for monetary values",
             "Pure functions are testable — isolating computeTaxes() as a pure function with no side effects made it trivial to verify correctness and reuse",
             "Configuration over magic numbers — defining tax rates as named constants at the top of the file makes the code self-documenting and easily adaptable",
@@ -213,7 +214,7 @@ fun taxCalculator() {
         H3(attrs = { classes("project-view-subtitle") }) {
             Text("Roadmap")
         }
-        featuresList(
+        FeaturesList(
             "Multi-jurisdiction support — allow users to select from a list of predefined tax areas or enter custom rates",
             "Receipt export — save the tax breakdown to a text file for record-keeping",
             "Historical rate lookup — integrate with a tax rate API for up-to-date rates across all jurisdictions",
@@ -266,34 +267,6 @@ Total tax amount: $6.12"""
         Div(attrs = { classes("project-footer") }) {
             P { Text("Created by Tabitha Tallent") }
             P { Text("Open Source — Free to Use and Modify") }
-        }
-    }
-}
-
-// ── HELPER: Tech Stack Chip ──────────────────────────────────────────
-
-@Composable
-private fun techChip(label: String, value: String) {
-    Div(attrs = { classes("tech-chip") }) {
-        Span(attrs = { classes("tech-chip-label") }) {
-            Text(label)
-        }
-        Div(attrs = { classes("tech-chip-value") }) {
-            Text(value)
-        }
-    }
-}
-
-// ── HELPER: Feature Bullet ───────────────────────────────────────────
-
-@Composable
-private fun featuresList(vararg items: String) {
-    items.forEach { item ->
-        P(attrs = { classes("feature-item") }) {
-            Span(attrs = { classes("feature-bullet") }) {
-                Text("• ")
-            }
-            Text(item)
         }
     }
 }

@@ -2,6 +2,9 @@ package com.tabithatallent.portfolio.views.projects
 
 import androidx.compose.runtime.Composable
 import com.tabithatallent.portfolio.components.ZoomableImage
+import com.tabithatallent.portfolio.components.ResourceItem
+import com.tabithatallent.portfolio.components.FeaturesList
+import com.tabithatallent.portfolio.components.TechChip
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Br
 import org.jetbrains.compose.web.dom.Div
@@ -9,7 +12,6 @@ import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.H3
 import org.jetbrains.compose.web.dom.H4
 import org.jetbrains.compose.web.dom.P
-import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
 
 
@@ -63,21 +65,21 @@ fun cornerSliceBakery() {
             Text("Tech Stack")
         }
         Div(attrs = { classes("tech-stack-grid") }) {
-            techChip("Language", "HTML5, CSS3, JavaScript")
-            techChip("Build Tool", "Webpack 5")
-            techChip("Architecture", "Component Injection Pipeline")
-            techChip("Layout", "CSS Flexbox & Grid")
-            techChip("Typography", "Cormorant Garamond + Inter")
-            techChip("Fonts", "Google Fonts API")
-            techChip("Asset Pipeline", "CopyWebpackPlugin + html-loader")
-            techChip("Development", "Webpack Dev Server + HMR")
+            TechChip("Language", "HTML5, CSS3, JavaScript")
+            TechChip("Build Tool", "Webpack 5")
+            TechChip("Architecture", "Component Injection Pipeline")
+            TechChip("Layout", "CSS Flexbox & Grid")
+            TechChip("Typography", "Cormorant Garamond + Inter")
+            TechChip("Fonts", "Google Fonts API")
+            TechChip("Asset Pipeline", "CopyWebpackPlugin + html-loader")
+            TechChip("Development", "Webpack Dev Server + HMR")
         }
 
         // ── Features ──────────────────────────────────────────────────
         H3(attrs = { classes("project-view-subtitle") }) {
             Text("Key Features")
         }
-        featuresList(
+        FeaturesList(
             "Responsive multi-page layout — Home, Menu, Contact & Catering, 404, and Attributions pages",
             "Interactive image popups — click any menu item to open a lightweight modal with full-size photo",
             "Modular HTML components — header, footer, meta tags, and modal shared across all pages",
@@ -93,11 +95,11 @@ fun cornerSliceBakery() {
             Text("Pages")
         }
         Div(attrs = { classes("decks-list") }) {
-            deckItem("Home", "Hero, About, Featured Products")
-            deckItem("Menu", "Full product catalog with 20+ items and image popups")
-            deckItem("Contact & Catering", "Contact info, five catering tiers, add-ons")
-            deckItem("404", "Custom error page")
-            deckItem("Attributions", "Image credits and licensing")
+            ResourceItem("Home", "Hero, About, Featured Products")
+            ResourceItem("Menu", "Full product catalog with 20+ items and image popups")
+            ResourceItem("Contact & Catering", "Contact info, five catering tiers, add-ons")
+            ResourceItem("404", "Custom error page")
+            ResourceItem("Attributions", "Image credits and licensing")
         }
 
         // ── Challenge ─────────────────────────────────────────────────
@@ -197,19 +199,19 @@ fun cornerSliceBakery() {
             Text("Menu Highlights")
         }
         Div(attrs = { classes("decks-list") }) {
-            deckItem("Artisanal Breads", "Sourdough, Focaccia, Baguette, Brioche")
-            deckItem("Savory Slices", "Puff pastry, tarts, sausage rolls, galette")
-            deckItem("Pastries & Scones", "Morning buns, danish, croissants, scones")
-            deckItem("Cookies & Sweets", "Cookies, brownies, snickerdoodles")
-            deckItem("Drinks & Extras", "Coffee, whipped butter, spread jars")
-            deckItem("Catering Tiers", "5 platter options from $32–$120")
+            ResourceItem("Artisanal Breads", "Sourdough, Focaccia, Baguette, Brioche")
+            ResourceItem("Savory Slices", "Puff pastry, tarts, sausage rolls, galette")
+            ResourceItem("Pastries & Scones", "Morning buns, danish, croissants, scones")
+            ResourceItem("Cookies & Sweets", "Cookies, brownies, snickerdoodles")
+            ResourceItem("Drinks & Extras", "Coffee, whipped butter, spread jars")
+            ResourceItem("Catering Tiers", "5 platter options from $32–$120")
         }
 
         // ── Takeaways ─────────────────────────────────────────────────
         H3(attrs = { classes("project-view-subtitle") }) {
             Text("Key Takeaways")
         }
-        featuresList(
+        FeaturesList(
             "Component-driven development — HTML partials with Webpack preprocessing keeps the codebase DRY",
             "Performance-first approach — no framework overhead; the entire site loads fast with minimal JS",
             "Data attribute pattern — using data-* for modal population is elegant, scalable, and avoids inline handlers",
@@ -220,7 +222,7 @@ fun cornerSliceBakery() {
         H3(attrs = { classes("project-view-subtitle") }) {
             Text("Completed ✓")
         }
-        featuresList(
+        FeaturesList(
             "Responsive multi-page layout across all breakpoints",
             "Interactive image popup modal system",
             "Modular component architecture",
@@ -244,38 +246,5 @@ fun cornerSliceBakery() {
             P { Text("Created by Tabitha Tallent") }
             P { Text("MIT License") }
         }
-    }
-}
-
-// ── Helpers ────────────────────────────────────────────────────────────
-
-@Composable
-private fun techChip(label: String, value: String) {
-    Div(attrs = { classes("tech-chip") }) {
-        Span(attrs = { classes("tech-chip-label") }) {
-            Text(label)
-        }
-        Div(attrs = { classes("tech-chip-value") }) {
-            Text(value)
-        }
-    }
-}
-
-
-@Composable
-private fun featuresList(vararg items: String) {
-    items.forEach { item ->
-        P {
-            Span(attrs = { classes("feature-bullet") }) { Text("• ") }
-            Text(item)
-        }
-    }
-}
-
-@Composable
-private fun deckItem(name: String, count: String) {
-    Div(attrs = { classes("resource-item") }) {
-        Span(attrs = { classes("resource-number") }) { Text(count) }
-        Span(attrs = { classes("resource-name") }) { Text(name) }
     }
 }
