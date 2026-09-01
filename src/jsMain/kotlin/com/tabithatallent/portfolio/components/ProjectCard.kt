@@ -10,6 +10,7 @@ fun ProjectCard(
     projectName: String,
     projectImage: String,
     projectDescription: String,
+    imageAlt: String = projectName,
     onClick: (() -> Unit)? = null
 ) {
 
@@ -20,6 +21,12 @@ fun ProjectCard(
                 attr("role", "button")
                 attr("tabindex", "0")
                 onClick { onClick() }
+                onKeyDown { event ->
+                    if (event.key == "Enter" || event.key == "Space") {
+                        event.preventDefault()
+                        onClick()
+                    }
+                }
             }
         }
     ) {
@@ -28,7 +35,7 @@ fun ProjectCard(
         }
 
         Div(attrs = { classes("project-card-image") }) {
-            Img(src = projectImage, alt = projectName)
+            Img(src = projectImage, alt = imageAlt)
         }
 
         Div(attrs = { classes("project-card-description") }) {

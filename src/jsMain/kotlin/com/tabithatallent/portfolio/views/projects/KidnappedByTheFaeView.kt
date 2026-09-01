@@ -1,7 +1,6 @@
 package com.tabithatallent.portfolio.views.projects
 
 import androidx.compose.runtime.Composable
-import com.tabithatallent.portfolio.components.CodeSandboxEmbed
 import com.tabithatallent.portfolio.components.ZoomableImage
 import com.tabithatallent.portfolio.components.ResourceItem
 import com.tabithatallent.portfolio.components.FeaturesList

@@ -14,7 +14,7 @@ import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Iframe
 
 @Composable
-fun CodeSandboxEmbed(
+fun DemoEmbed(
     embedUrl: String = "https://stackblitz.com/edit/kidnapped-by-the-fae?embed=1&file=main.py&hideExplorer=1&hideNavigation=1&view=preview",
     title: String = "Python Console Demo"
 ) {
